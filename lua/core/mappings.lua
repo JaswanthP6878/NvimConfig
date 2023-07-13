@@ -7,7 +7,7 @@ M.general = {
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
     ["<C-e>"] = { "<End>", "End of line" },
-
+    ["jj"] = {"<ESC>", "Enter Normal Mode"},
     -- navigate within insert mode
     ["<C-h>"] = { "<Left>", "Move left" },
     ["<C-l>"] = { "<Right>", "Move right" },
@@ -35,7 +35,7 @@ M.general = {
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
-    -- empty mode is same as using <cmd> :map
+    -- empty mode is same  as using <cmd> :map
     -- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
     ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
